@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-oom-tester
+  namespace: default
+  labels:
+    app: node-oom-tester
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-oom-tester
+  template:
+    metadata:
+      labels:
+        app: node-oom-tester
+    spec:
+      containers:
+      - name: node-oom-tester
+        image: armujahid/node-oom-tester:latest
+        envFrom:
+        - configMapRef:
+            name: node-oom-tester
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "50m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+
