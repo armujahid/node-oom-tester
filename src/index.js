@@ -1,5 +1,8 @@
-// taken from https://blog.appsignal.com/2021/12/08/nodejs-memory-limits-what-you-should-know.html
+import v8 from 'v8';
+console.log('v8.getHeapStatistics()')
+console.log(v8.getHeapStatistics())
 
+// taken from https://blog.appsignal.com/2021/12/08/nodejs-memory-limits-what-you-should-know.html
 const memoryLeakAllocations = [];
  
 const field = "heapUsed";

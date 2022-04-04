@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "program to test heap memory limits",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node .",
     "start:4Gi": "node --max-old-space-size=4096 .",
