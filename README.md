@@ -36,7 +36,7 @@ Docker image: https://hub.docker.com/repository/docker/armujahid/node-oom-tester
 Deployment on k8s:
 1) run
 ```
-k apply -k ./k8s/overlays/development
+1) k apply -k ./k8s/overlays/development
 2) play with different `max_old_space_size` (can be changed in `application.properties`) and kubernetes memory `limits` (can be changed in deployment.yaml)
 ```
 3) cleanup
